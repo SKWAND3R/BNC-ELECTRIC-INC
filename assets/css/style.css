@@ -1,0 +1,291 @@
+:root {
+  --primary: #0c6cf2;
+  --primary-dark: #0847a8;
+  --bg: #f5f7fb;
+  --text: #1b1b1f;
+  --muted: #6b6b75;
+  --card-bg: #ffffff;
+  --border: #e0e3ec;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* Header */
+
+.top-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 6vw;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.nav a:hover {
+  color: var(--primary);
+}
+
+/* Hero */
+
+.hero {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  padding: 4rem 6vw;
+  background: radial-gradient(circle at top left, #e3f0ff, #f5f7fb);
+}
+
+.hero-content {
+  max-width: 640px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+/* Sections */
+
+.section {
+  padding: 3.5rem 6vw;
+}
+
+.section-alt {
+  background: #ffffff;
+}
+
+.section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.section p {
+  max-width: 720px;
+  color: var(--muted);
+}
+
+/* Services */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.service-card {
+  background: var(--card-bg);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+}
+
+.service-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.service-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-card li {
+  position: relative;
+  padding-left: 1.2rem;
+  margin-bottom: 0.4rem;
+  color: var(--muted);
+}
+
+.service-card li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+}
+
+/* Reviews */
+
+.rating-summary {
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.rating-summary span {
+  margin-left: 0.5rem;
+  color: var(--muted);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.review-card {
+  background: var(--card-bg);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+}
+
+.review-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.review-card p {
+  margin: 0.4rem 0;
+}
+
+.review-meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.reviews-link {
+  margin-top: 1.5rem;
+  color: var(--muted);
+}
+
+/* Contact */
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.contact-info p {
+  margin: 0.4rem 0;
+  color: var(--muted);
+}
+
+.contact-form {
+  background: var(--card-bg);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+}
+
+.form-row {
+  margin-bottom: 1rem;
+}
+
+.form-row label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.form-status {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Footer */
+
+.footer {
+  padding: 1.5rem 6vw;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 6vw;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .top-bar {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .nav a {
+    margin-left: 0.75rem;
+    font-size: 0.9rem;
+  }
+}
