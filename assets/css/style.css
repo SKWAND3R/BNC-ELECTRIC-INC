@@ -1,15 +1,25 @@
 :root {
   --primary: #0c6cf2;
+  --primary-dark: #0847a8;
   --dark: #111;
   --light: #fff;
   --muted: #777;
   --border: #e5e5e5;
+  --bg-alt: #f9f9f9;
 }
 
+/* Global */
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
   color: #222;
+  background: #fff;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
 }
 
 /* Header */
@@ -22,12 +32,6 @@ body {
   z-index: 100;
 }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-}
-
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -36,7 +40,7 @@ body {
 
 .logo {
   font-weight: 700;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
 }
 
 .nav a {
@@ -48,6 +52,37 @@ body {
 
 .nav a:hover {
   color: var(--primary);
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--primary);
+  padding: 0.8rem 1.6rem;
+  border-radius: 4px;
+  color: var(--light);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+.btn-secondary {
+  background: #ffb400;
+  padding: 0.8rem 1.6rem;
+  border-radius: 4px;
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.center {
+  display: block;
+  text-align: center;
+  margin: 2rem auto 0;
 }
 
 /* Hero */
@@ -78,13 +113,9 @@ body {
   margin-bottom: 1rem;
 }
 
-.btn-primary {
-  background: var(--primary);
-  padding: 0.8rem 1.6rem;
-  border-radius: 4px;
-  color: var(--light);
-  text-decoration: none;
-  font-weight: 600;
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
 /* Sections */
@@ -93,15 +124,16 @@ body {
 }
 
 .section-alt {
-  background: #f9f9f9;
+  background: var(--bg-alt);
 }
 
 .section h2 {
   text-align: center;
   margin-bottom: 2rem;
+  font-size: 2rem;
 }
 
-/* Services */
+/* Services Summary */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -114,18 +146,73 @@ body {
   border-radius: 6px;
   border: 1px solid var(--border);
   text-align: center;
+  transition: 0.2s ease;
 }
 
-/* About */
+.service-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-3px);
+}
+
+/* Full Services Page */
+.services-full-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.service-block {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+.service-block h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.service-block ul {
+  padding-left: 1rem;
+  margin: 0;
+}
+
+.service-block li {
+  margin-bottom: 0.5rem;
+  color: var(--muted);
+}
+
+/* About Page */
 .about-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
 }
 
+.about-text p {
+  margin-bottom: 1rem;
+  color: var(--muted);
+}
+
 .about-image {
   background: url('https://images.unsplash.com/photo-1581091012184-5c1d1c6f1e1b') center/cover no-repeat;
   border-radius: 6px;
+  min-height: 350px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.feature-box {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
 }
 
 /* Gallery */
@@ -141,14 +228,37 @@ body {
   border-radius: 6px;
 }
 
-/* Contact */
+/* Estimate Page */
+.estimate-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.estimate-form,
+.estimate-info {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+.emergency-box {
+  background: #ffb400;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-top: 1.5rem;
+}
+
+/* Contact Page */
 .contact-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
 }
 
-.contact-form {
+.contact-form,
+.contact-info {
   background: #fff;
   padding: 1.5rem;
   border-radius: 6px;
@@ -166,6 +276,11 @@ body {
   padding: 0.6rem;
   border-radius: 4px;
   border: 1px solid var(--border);
+}
+
+.form-status {
+  margin-top: 1rem;
+  color: var(--muted);
 }
 
 /* Footer */
