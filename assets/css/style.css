@@ -1,11 +1,13 @@
 :root {
   --primary: #0c6cf2;
   --primary-dark: #0847a8;
+  --accent: #ffb400;
   --dark: #111;
   --light: #fff;
-  --muted: #777;
+  --muted: #666;
   --border: #e5e5e5;
-  --bg-alt: #f9f9f9;
+  --bg-alt: #f7f9fc;
+  --shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
 /* Global */
@@ -14,6 +16,7 @@ body {
   font-family: "Segoe UI", sans-serif;
   color: #222;
   background: #fff;
+  line-height: 1.6;
 }
 
 .container {
@@ -30,6 +33,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .nav-container {
@@ -40,43 +44,55 @@ body {
 
 .logo {
   font-weight: 700;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
 }
 
 .nav a {
-  margin-left: 1rem;
+  margin-left: 1.5rem;
   text-decoration: none;
   color: var(--dark);
   font-weight: 500;
+  transition: 0.2s ease;
 }
 
 .nav a:hover {
   color: var(--primary);
+  transform: translateY(-2px);
 }
 
 /* Buttons */
 .btn-primary {
   background: var(--primary);
-  padding: 0.8rem 1.6rem;
-  border-radius: 4px;
+  padding: 0.9rem 1.8rem;
+  border-radius: 6px;
   color: var(--light);
   text-decoration: none;
   font-weight: 600;
   display: inline-block;
+  box-shadow: var(--shadow);
+  transition: 0.2s ease;
 }
 
 .btn-primary:hover {
   background: var(--primary-dark);
+  transform: translateY(-3px);
 }
 
 .btn-secondary {
-  background: #ffb400;
-  padding: 0.8rem 1.6rem;
-  border-radius: 4px;
+  background: var(--accent);
+  padding: 0.9rem 1.8rem;
+  border-radius: 6px;
   color: #000;
   text-decoration: none;
   font-weight: 600;
   display: inline-block;
+  box-shadow: var(--shadow);
+  transition: 0.2s ease;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-3px);
 }
 
 .center {
@@ -87,7 +103,7 @@ body {
 
 /* Hero */
 .hero {
-  height: 70vh;
+  height: 75vh;
   background: url('https://images.unsplash.com/photo-1581091870622-1e7a8c5a2c2b') center/cover no-repeat;
   position: relative;
   display: flex;
@@ -105,22 +121,25 @@ body {
   position: relative;
   text-align: center;
   color: var(--light);
-  max-width: 600px;
+  max-width: 650px;
+  padding: 1rem;
 }
 
 .hero-content h1 {
-  font-size: 2.8rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #f0f0f0;
 }
 
 /* Sections */
 .section {
-  padding: 3rem 0;
+  padding: 4rem 0;
 }
 
 .section-alt {
@@ -129,48 +148,52 @@ body {
 
 .section h2 {
   text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  font-size: 2.2rem;
+  font-weight: 700;
 }
 
 /* Services Summary */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
 }
 
 .service-card {
   background: #fff;
-  padding: 1.5rem;
-  border-radius: 6px;
+  padding: 2rem;
+  border-radius: 10px;
   border: 1px solid var(--border);
   text-align: center;
-  transition: 0.2s ease;
+  box-shadow: var(--shadow);
+  transition: 0.25s ease;
 }
 
 .service-card:hover {
   border-color: var(--primary);
-  transform: translateY(-3px);
+  transform: translateY(-5px);
 }
 
 /* Full Services Page */
 .services-full-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
 }
 
 .service-block {
   background: #fff;
-  padding: 1.5rem;
-  border-radius: 6px;
+  padding: 2rem;
+  border-radius: 10px;
   border: 1px solid var(--border);
+  box-shadow: var(--shadow);
 }
 
 .service-block h3 {
   margin-top: 0;
   margin-bottom: 1rem;
+  font-size: 1.4rem;
 }
 
 .service-block ul {
@@ -179,7 +202,7 @@ body {
 }
 
 .service-block li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
   color: var(--muted);
 }
 
@@ -187,95 +210,103 @@ body {
 .about-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 3rem;
 }
 
 .about-text p {
   margin-bottom: 1rem;
   color: var(--muted);
+  font-size: 1.05rem;
 }
 
 .about-image {
   background: url('https://images.unsplash.com/photo-1581091012184-5c1d1c6f1e1b') center/cover no-repeat;
-  border-radius: 6px;
-  min-height: 350px;
+  border-radius: 10px;
+  min-height: 380px;
+  box-shadow: var(--shadow);
 }
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-  margin: 2rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin: 2.5rem 0;
 }
 
 .feature-box {
   background: #fff;
-  padding: 1rem;
-  border-radius: 6px;
+  padding: 1.5rem;
+  border-radius: 10px;
   border: 1px solid var(--border);
+  box-shadow: var(--shadow);
 }
 
 /* Gallery */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
 }
 
 .gallery-item {
   background: url('https://images.unsplash.com/photo-1581091870622-1e7a8c5a2c2b') center/cover no-repeat;
-  height: 180px;
-  border-radius: 6px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
 }
 
 /* Estimate Page */
 .estimate-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 3rem;
 }
 
 .estimate-form,
 .estimate-info {
   background: #fff;
-  padding: 1.5rem;
-  border-radius: 6px;
+  padding: 2rem;
+  border-radius: 10px;
   border: 1px solid var(--border);
+  box-shadow: var(--shadow);
 }
 
 .emergency-box {
-  background: #ffb400;
-  padding: 1rem;
-  border-radius: 6px;
-  margin-top: 1.5rem;
+  background: var(--accent);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  box-shadow: var(--shadow);
 }
 
 /* Contact Page */
 .contact-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 3rem;
 }
 
 .contact-form,
 .contact-info {
   background: #fff;
-  padding: 1.5rem;
-  border-radius: 6px;
+  padding: 2rem;
+  border-radius: 10px;
   border: 1px solid var(--border);
+  box-shadow: var(--shadow);
 }
 
 .form-row {
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 
 .form-row input,
 .form-row select,
 .form-row textarea {
   width: 100%;
-  padding: 0.6rem;
-  border-radius: 4px;
+  padding: 0.75rem;
+  border-radius: 6px;
   border: 1px solid var(--border);
+  font-size: 1rem;
 }
 
 .form-status {
@@ -286,7 +317,8 @@ body {
 /* Footer */
 .footer {
   text-align: center;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
   background: #fff;
   border-top: 1px solid var(--border);
+  margin-top: 3rem;
 }
