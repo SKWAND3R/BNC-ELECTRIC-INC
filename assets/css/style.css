@@ -1,14 +1,215 @@
 /* ============================
-   DETAILED SERVICES SECTION
+   GLOBAL VARIABLES
 ============================ */
-.services-large {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;
-  margin-top: 2rem;
+:root {
+  --primary: #0c6cf2;
+  --primary-dark: #0847a8;
+  --accent: #ffb400;
+  --dark: #111;
+  --light: #fff;
+  --muted: #666;
+  --border: #e5e5e5;
+  --bg-alt: #f7f9fc;
+  --shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
-.service-large {
+/* ============================
+   GLOBAL
+============================ */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  color: #222;
+  background: #fff;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.section-alt {
+  background: var(--bg-alt);
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* ============================
+   HEADER
+============================ */
+.header {
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+.nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.nav a:hover {
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* ============================
+   BUTTONS
+============================ */
+.btn-primary {
+  background: var(--primary);
+  padding: 0.9rem 1.8rem;
+  border-radius: 6px;
+  color: var(--light);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  box-shadow: var(--shadow);
+  transition: 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+}
+
+.btn-secondary {
+  background: var(--accent);
+  padding: 0.9rem 1.8rem;
+  border-radius: 6px;
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  box-shadow: var(--shadow);
+  transition: 0.2s ease;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-3px);
+}
+
+.full-width {
+  width: 100%;
+  text-align: center;
+}
+
+.center {
+  display: block;
+  text-align: center;
+  margin: 2rem auto 0;
+}
+
+/* ============================
+   HOMEPAGE — SPLIT HERO
+============================ */
+.hero {
+  background: #0c2a66;
+  color: var(--light);
+  padding: 5rem 0;
+  position: relative;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-left h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hero-left p {
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+  color: #e6e6e6;
+  max-width: 550px;
+}
+
+.hero-buttons a {
+  margin-right: 1rem;
+}
+
+/* ============================
+   HOMEPAGE — FEATURE PANEL
+============================ */
+.feature-panel {
+  background: #fff;
+  color: #000;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 350px;
+  box-shadow: var(--shadow);
+}
+
+.feature-panel h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.feature-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.feature-panel li {
+  padding: 0.4rem 0;
+  font-size: 1rem;
+  color: var(--dark);
+  border-bottom: 1px solid var(--border);
+}
+
+/* ============================
+   HOMEPAGE — SERVICES SUMMARY
+============================ */
+.services-large,
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.service-large,
+.service-card {
   background: #fff;
   padding: 2rem;
   border-radius: 10px;
@@ -17,16 +218,24 @@
   transition: 0.25s ease;
 }
 
-.service-large:hover {
+.service-large:hover,
+.service-card:hover {
   transform: translateY(-5px);
   border-color: var(--primary);
 }
 
-.service-large h3 {
+.service-large h3,
+.service-card h3 {
   margin-top: 0;
   margin-bottom: 1rem;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 700;
+}
+
+.service-large p,
+.service-card p {
+  color: var(--muted);
+  font-size: 1rem;
 }
 
 .service-large ul {
@@ -37,11 +246,10 @@
 .service-large li {
   margin-bottom: 0.6rem;
   color: var(--muted);
-  font-size: 1rem;
 }
 
 /* ============================
-   TESTIMONIALS SECTION
+   HOMEPAGE — TESTIMONIALS
 ============================ */
 .testimonials-grid {
   display: grid;
@@ -79,7 +287,7 @@
 }
 
 /* ============================
-   CTA SECTION ("Ready to Get Started?")
+   CTA SECTION (Homepage + About + Services)
 ============================ */
 .cta-section {
   background: var(--primary);
@@ -103,7 +311,137 @@
 }
 
 /* ============================
-   FULL FOOTER (3-COLUMN)
+   ABOUT PAGE
+============================ */
+.about-title {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.about-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.about-story {
+  max-width: 900px;
+  margin: auto;
+}
+
+.about-story p {
+  margin-bottom: 1rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+/* ============================
+   ABOUT PAGE — FEATURE BOXES
+============================ */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.feature-box {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.feature-box h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.feature-box p {
+  color: var(--muted);
+}
+
+/* ============================
+   SERVICES PAGE — ICON GRID
+============================ */
+.services-icons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.service-icon-box {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: 0.25s ease;
+}
+
+.service-icon-box:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+}
+
+.service-icon-box h3 {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.service-icon-box p {
+  color: var(--muted);
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+/* ============================
+   SERVICES PAGE — DETAILED LISTS
+============================ */
+.services-detailed-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.services-detailed-block {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.services-detailed-block h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.services-detailed-block ul {
+  padding-left: 1rem;
+  margin: 0;
+}
+
+.services-detailed-block li {
+  margin-bottom: 0.6rem;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/* ============================
+   FOOTER
 ============================ */
 .footer-dark {
   background: #0c2a66;
