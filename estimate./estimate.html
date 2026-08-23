@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Estimate | BNC Electric Inc</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="container nav-container">
+      <div class="logo">BNC Electric Inc</div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Our Services</a>
+        <a href="estimate.html">Free Estimate</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container estimate-layout">
+      <div class="estimate-form">
+        <h2>Request Your Free Estimate</h2>
+
+        <form id="estimateForm">
+          <div class="form-row">
+            <label>Full Name</label>
+            <input type="text" name="name" required />
+          </div>
+
+          <div class="form-row">
+            <label>Phone Number</label>
+            <input type="tel" name="phone" required />
+          </div>
+
+          <div class="form-row">
+            <label>Email Address</label>
+            <input type="email" name="email" required />
+          </div>
+
+          <div class="form-row">
+            <label>Service Address</label>
+            <input type="text" name="address" required />
+          </div>
+
+          <div class="form-row">
+            <label>Type of Service</label>
+            <select name="service">
+              <option>Residential</option>
+              <option>Commercial</option>
+              <option>Industrial</option>
+              <option>Emergency</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label>Project Details</label>
+            <textarea name="details" rows="4" required></textarea>
+          </div>
+
+          <button class="btn-primary">Submit Request</button>
+          <p id="estimateStatus" class="form-status"></p>
+        </form>
+      </div>
+
+      <div class="estimate-info">
+        <h3>Contact Information</h3>
+        <p><strong>Phone:</strong> (XXX) XXX‑XXXX</p>
+        <p><strong>Service Area:</strong> Mississauga & GTA</p>
+        <p><strong>Response Time:</strong> Within 24 hours</p>
+
+        <div class="emergency-box">
+          <h3>24/7 Emergency Service</h3>
+          <p>Need immediate assistance? Call us now!</p>
+          <a href="contact.html" class="btn-secondary">Call Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> BNC Electric Inc. All rights reserved.</p>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
