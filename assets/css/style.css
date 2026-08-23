@@ -1,3 +1,6 @@
+/* ============================
+   GLOBAL VARIABLES
+============================ */
 :root {
   --primary: #0c6cf2;
   --primary-dark: #0847a8;
@@ -10,7 +13,9 @@
   --shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
-/* Global */
+/* ============================
+   GLOBAL
+============================ */
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
@@ -25,7 +30,9 @@ body {
   margin: auto;
 }
 
-/* Header */
+/* ============================
+   HEADER
+============================ */
 .header {
   background: #fff;
   border-bottom: 1px solid var(--border);
@@ -61,7 +68,9 @@ body {
   transform: translateY(-2px);
 }
 
-/* Buttons */
+/* ============================
+   BUTTONS
+============================ */
 .btn-primary {
   background: var(--primary);
   padding: 0.9rem 1.8rem;
@@ -95,226 +104,143 @@ body {
   transform: translateY(-3px);
 }
 
+.full-width {
+  width: 100%;
+  text-align: center;
+}
+
 .center {
   display: block;
   text-align: center;
   margin: 2rem auto 0;
 }
 
-/* Hero */
+/* ============================
+   HERO SECTION (Split Layout)
+============================ */
 .hero {
-  height: 75vh;
-  background: url('https://images.unsplash.com/photo-1581091870622-1e7a8c5a2c2b') center/cover no-repeat;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
-}
-
-.hero-content {
-  position: relative;
-  text-align: center;
+  background: #0c2a66; /* deep blue like screenshot */
   color: var(--light);
-  max-width: 650px;
-  padding: 1rem;
+  padding: 4rem 0;
+  position: relative;
 }
 
-.hero-content h1 {
-  font-size: 3rem;
+.hero-split {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-left h1 {
+  font-size: 2.8rem;
   margin-bottom: 1rem;
   font-weight: 700;
 }
 
-.hero-content p {
-  font-size: 1.25rem;
+.hero-left p {
+  font-size: 1.15rem;
   margin-bottom: 2rem;
-  color: #f0f0f0;
+  color: #e6e6e6;
+  max-width: 550px;
 }
 
-/* Sections */
+.hero-buttons a {
+  margin-right: 1rem;
+}
+
+/* ============================
+   HERO RIGHT PANEL
+============================ */
+.hero-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.feature-panel {
+  background: #fff;
+  color: #000;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 350px;
+  box-shadow: var(--shadow);
+}
+
+.feature-panel h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.feature-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.feature-panel li {
+  padding: 0.4rem 0;
+  font-size: 1rem;
+  color: var(--dark);
+  border-bottom: 1px solid var(--border);
+}
+
+/* ============================
+   SERVICES SECTION
+============================ */
 .section {
   padding: 4rem 0;
-}
-
-.section-alt {
-  background: var(--bg-alt);
 }
 
 .section h2 {
   text-align: center;
   margin-bottom: 2.5rem;
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 700;
 }
 
-/* Services Summary */
-.services-grid {
+.services-large {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
 }
 
-.service-card {
-  background: #fff;
+.service-large {
   padding: 2rem;
   border-radius: 10px;
+  background: #fff;
   border: 1px solid var(--border);
-  text-align: center;
   box-shadow: var(--shadow);
   transition: 0.25s ease;
 }
 
-.service-card:hover {
-  border-color: var(--primary);
+.service-large:hover {
   transform: translateY(-5px);
+  border-color: var(--primary);
 }
 
-/* Full Services Page */
-.services-full-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;
-}
-
-.service-block {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-}
-
-.service-block h3 {
+.service-large h3 {
   margin-top: 0;
   margin-bottom: 1rem;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 
-.service-block ul {
-  padding-left: 1rem;
-  margin: 0;
-}
-
-.service-block li {
-  margin-bottom: 0.6rem;
+.service-large p {
   color: var(--muted);
-}
-
-/* About Page */
-.about-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-}
-
-.about-text p {
-  margin-bottom: 1rem;
-  color: var(--muted);
-  font-size: 1.05rem;
-}
-
-.about-image {
-  background: url('https://images.unsplash.com/photo-1581091012184-5c1d1c6f1e1b') center/cover no-repeat;
-  border-radius: 10px;
-  min-height: 380px;
-  box-shadow: var(--shadow);
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-  margin: 2.5rem 0;
-}
-
-.feature-box {
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-}
-
-/* Gallery */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-}
-
-.gallery-item {
-  background: url('https://images.unsplash.com/photo-1581091870622-1e7a8c5a2c2b') center/cover no-repeat;
-  height: 200px;
-  border-radius: 10px;
-  box-shadow: var(--shadow);
-}
-
-/* Estimate Page */
-.estimate-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-}
-
-.estimate-form,
-.estimate-info {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-}
-
-.emergency-box {
-  background: var(--accent);
-  padding: 1.5rem;
-  border-radius: 10px;
-  margin-top: 2rem;
-  box-shadow: var(--shadow);
-}
-
-/* Contact Page */
-.contact-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-}
-
-.contact-form,
-.contact-info {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-}
-
-.form-row {
-  margin-bottom: 1.2rem;
-}
-
-.form-row input,
-.form-row select,
-.form-row textarea {
-  width: 100%;
-  padding: 0.75rem;
-  border-radius: 6px;
-  border: 1px solid var(--border);
   font-size: 1rem;
 }
 
-.form-status {
-  margin-top: 1rem;
-  color: var(--muted);
-}
-
-/* Footer */
+/* ============================
+   FOOTER
+============================ */
 .footer {
   text-align: center;
   padding: 1.5rem 0;
