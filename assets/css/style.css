@@ -439,6 +439,143 @@ body {
   color: var(--muted);
   font-size: 1rem;
 }
+/* ============================
+   ESTIMATE PAGE — TOP BLUE HEADER
+============================ */
+.estimate-hero {
+  background: #0c2a66;
+  color: var(--light);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.estimate-hero h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.estimate-hero p {
+  font-size: 1.2rem;
+  color: #e6e6e6;
+}
+
+/* ============================
+   ESTIMATE PAGE — GRID LAYOUT
+============================ */
+.estimate-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+/* ============================
+   ESTIMATE PAGE — FORM CARD
+============================ */
+.estimate-form-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.estimate-form-card h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.form-row {
+  margin-bottom: 1.2rem;
+}
+
+.form-row label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  font-size: 1rem;
+}
+
+.form-note {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ============================
+   ESTIMATE PAGE — CONTACT INFO CARD
+============================ */
+.estimate-info-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.estimate-info-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.estimate-info-card p {
+  margin-bottom: 0.8rem;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/* ============================
+   ESTIMATE PAGE — EMERGENCY BOX
+============================ */
+.estimate-emergency-box {
+  background: var(--accent);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.estimate-emergency-box h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.estimate-emergency-box p {
+  margin-bottom: 1rem;
+  color: #000;
+  font-size: 1rem;
+}
+
+/* ============================
+   RESPONSIVE DESIGN
+============================ */
+@media (max-width: 900px) {
+  .estimate-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .estimate-info-card {
+    margin-top: 2rem;
+  }
+}
 
 /* ============================
    FOOTER
